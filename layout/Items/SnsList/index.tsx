@@ -6,8 +6,8 @@ interface Props {
 }
 const SnsList: FC<Props> = ({ href, children }) => {
   return (
-    <div>
-      <a href={href} target="blank">
+    <div className="w-[18px] h-[18px] mr-[10px] inline-block cursor-pointer last:mr-0">
+      <a href={href} target="blank w-[18px] h-[18px] block">
         {children}
       </a>
     </div>

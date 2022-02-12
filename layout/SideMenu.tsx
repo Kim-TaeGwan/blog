@@ -1,10 +1,10 @@
 import React, { VFC } from "react";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
-import profile_img from "assets/image/Profile_img.png";
-
+import Image from "next/image";
 import SnsList from "./Items/SnsList";
 import MenuList from "./Items/MenuList";
+import profile_img from "assets/image/Profile_img.png";
 import CloseBlackIcon from "assets/icon/CloseBlackIcon";
 import UserBlackIcon from "assets/icon/UserBlackIcon";
 import MailBlackIcon from "assets/icon/MailBlackIcon";
@@ -35,28 +35,32 @@ const SideMenu: VFC<Props> = ({ onClick }) => {
         <CloseBlackIcon />
       </div>
       <div className="profile_img w-[120px] h-[120px] mb-30 rounded-[4px]">
-        {/*<img src={profile_img} alt="profile_img" width="100%" height="100%" />*/}
+        <Image src={profile_img} alt="profile_img" width="100%" height="100%" />
       </div>
-      <div className="title">PORTFOLIO</div>
-      <div className="noti"> Template by W3.CSS </div>
+      <div className=" text-[20px] font-bold">PORTFOLIO</div>
+      <div className=" text-[15px] text-[#757575] mb-[-10px]">
+        Template by W3.CSS
+      </div>
       <div className="menu_list">
-        <ul>
+        <ul className="p-0">
           <MenuList link="/" menu="PORTFOLIO">
             <BoxBlackIcon />
           </MenuList>
           {/* <MenuList link="/asd" img={user_ico_black} menu="ABOUT" /> */}
-          <li onClick={nullPage}>
-            <span className="ico">
+          <li onClick={nullPage} className="list-none cursor-pointer">
+            <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
               <UserBlackIcon />
             </span>
-            <span> ABOUT </span>
+            <span className="inline-block text-[15px] align-middle">ABOUT</span>
           </li>
           {/* <MenuList link="/asd" img={mail_ico_black} menu="CONTACT" /> */}
-          <li onClick={nullPage}>
-            <span className="ico">
+          <li onClick={nullPage} className="list-none cursor-pointer">
+            <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
               <MailBlackIcon />
             </span>
-            <span> CONTACT </span>
+            <span className="inline-block text-[15px] align-middle">
+              CONTACT
+            </span>
           </li>
           <MenuList link="/studyTable" menu="STUDY TABLE">
             <TableBlackIcon />

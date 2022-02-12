@@ -9,11 +9,15 @@ interface Props {
 const MenuList: FC<Props> = ({ link, menu, children }) => {
   return (
     <>
-      <li>
+      <li className="list-none cursor-pointer">
         <Link href={link} passHref>
-          <a>
-            <span className="ico">{children}</span>
-            <span> {menu} </span>
+          <a className="no-underline text-black">
+            <span className="ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
+              {children}
+            </span>
+            <span className="inline-block text-[15px] align-middle">
+              {menu}
+            </span>
           </a>
         </Link>
       </li>

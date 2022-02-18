@@ -11,6 +11,10 @@ module.exports = {
         white: "#fff",
         darkGreen: "#009688",
       },
+      screens: {
+        tablet: { max: "995px" },
+        mobile: { max: "600px" },
+      },
       animation: { "side-left": "animateleft 0.4s" },
       keyframes: {
         animateleft: {

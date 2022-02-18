@@ -24,17 +24,17 @@ const SideMenu: VFC<Props> = ({ onClick }) => {
   };
   return (
     <div
-      className="sideMenu bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] side-left"
+      className="bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] tablet:hidden mobile:hidden"
       id="mySidenav"
       // style={style}
     >
       <div
-        className="w-[20px] h-[20px] absolute top-10 right-20"
+        className="w-[20px] h-[20px] absolute top-10 right-20 hidden tablet:block mobile:block"
         onClick={onClick}
       >
         <CloseBlackIcon />
       </div>
-      <div className="profile_img w-[120px] h-[120px] mb-30 rounded-[4px]">
+      <div className="w-[120px] h-[120px] mb-30 rounded-[4px]">
         <Image src={profile_img} alt="profile_img" width="100%" height="100%" />
       </div>
       <div className=" text-[20px] font-bold">PORTFOLIO</div>

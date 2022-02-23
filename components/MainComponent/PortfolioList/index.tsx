@@ -13,7 +13,6 @@ const PortfolioList: FC = () => {
       setIsLoading(true);
       try {
         const result = await portfolioApi.get<any[]>("/");
-        // console.log(result);
         setList(result.data);
         setList([...result.data]);
       } catch (error) {

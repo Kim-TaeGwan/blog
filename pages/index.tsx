@@ -1,7 +1,15 @@
 import type { NextPage } from "next";
+import Layout from "layout";
+import MainComponent from "@/components/MainComponent";
+import axios from "axios";
 
 const Home: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  axios.defaults.withCredentials = true;
+  return (
+    <Layout>
+      <MainComponent />
+    </Layout>
+  );
 };
 
 export default Home;

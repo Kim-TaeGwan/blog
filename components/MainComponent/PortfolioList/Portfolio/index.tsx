@@ -4,7 +4,7 @@ import Image from "next/image";
 interface Props {
   title: string;
   comment: string;
-  img_url: any;
+  img_url: string;
 }
 const Portfolio: FC<Props> = ({ title, comment, img_url }) => {
   return (
@@ -18,6 +18,7 @@ const Portfolio: FC<Props> = ({ title, comment, img_url }) => {
           className="align-middle hover:opacity-60 mobile:h-[230px]"
           objectFit="cover"
           layout="responsive"
+          priority
         />
       </div>
       <div className="h-[140px] bg-white p-[15px] box-border">

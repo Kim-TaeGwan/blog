@@ -28,11 +28,21 @@ const PortfolioList: FC = () => {
   // console.log('listArray : ', listArray);
   return (
     <>
-      <div className="portfolio_list">
-        {isLoading && <div className="loader" />}
+      <div className="portfolio_list py-0 px-[8px]">
+        {isLoading && (
+          <div
+            style={{ borderTopColor: "transparent" }}
+            className="w-16 h-16 border-4 border-black border-solid rounded-full animate-spin "
+          />
+        )}
         {list &&
           list.map((item: any, index: number) => (
-            <a key={index} href={item.url} target="black">
+            <a
+              key={index}
+              href={item.url}
+              target="black"
+              className="no-underline text-black"
+            >
               <Portfolio
                 title={item.title}
                 comment={item.comment}

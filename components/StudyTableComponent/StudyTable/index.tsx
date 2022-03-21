@@ -31,10 +31,10 @@ const StudyTable: FC<Props> = ({ main }) => {
   // pagination
 
   return (
-    <div className="table_container py-0 px-[16px] mb-[40px] relative">
-      <h4 className="part_title my-[10px] mx-0 font-normal">StudyTable</h4>
+    <div className=" py-0 px-[16px] mb-[40px] relative">
+      <h4 className=" my-[10px] mx-0 font-normal">StudyTable</h4>
       {main && (
-        <div className="all_btn absolute top-0 right-[16px] text-[13px]">
+        <div className=" absolute top-0 right-[16px] text-[13px]">
           <Link href={"/study"}>전체보기</Link>
         </div>
       )}
@@ -46,7 +46,7 @@ const StudyTable: FC<Props> = ({ main }) => {
       )}
       <table
         className={`w-full mt-[25px] text-[15px] ${
-          main ? "main block h-[200px] overflow-hidden" : ""
+          main ? "block h-[200px] overflow-hidden" : ""
         }`}
       >
         <tbody>

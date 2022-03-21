@@ -62,7 +62,7 @@ const SideMenu: VFC<Props> = ({ onClick }) => {
               CONTACT
             </span>
           </li>
-          <MenuList link="/studyTable" menu="STUDY TABLE">
+          <MenuList link="/study" menu="STUDY TABLE">
             <TableBlackIcon />
           </MenuList>
         </ul>

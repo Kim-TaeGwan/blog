@@ -2,6 +2,8 @@ import React, { useState, useCallback } from "react";
 import Overlay from "@/shared/Overlay";
 import Header from "@/layout/Header";
 import PortfolioList from "@/components/MainComponent/PortfolioList";
+import StudyTableComponent from "@/components/StudyTableComponent";
+import StudyTable from "@/components/StudyTableComponent/StudyTable";
 
 const MainComponent = () => {
   const [inputs, setInputs] = useState({
@@ -60,6 +62,7 @@ const MainComponent = () => {
       <Overlay />
       <Header onClick={openNav} />
       <PortfolioList />
+      <StudyTable main />
     </div>
   );
 };

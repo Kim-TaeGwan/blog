@@ -4,6 +4,7 @@ import Header from "@/layout/Header";
 import PortfolioList from "@/components/MainComponent/PortfolioList";
 import StudyTableComponent from "@/components/StudyTableComponent";
 import StudyTable from "@/components/StudyTableComponent/StudyTable";
+import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";
 
 const MainComponent = () => {
   const [inputs, setInputs] = useState({
@@ -63,6 +64,7 @@ const MainComponent = () => {
       <Header onClick={openNav} />
       <PortfolioList />
       <StudyTable main />
+      <TechnicalSkills />
     </div>
   );
 };

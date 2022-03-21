@@ -28,7 +28,7 @@ const PortfolioList: FC = () => {
   // console.log('listArray : ', listArray);
   return (
     <>
-      <div className="portfolio_list py-0 px-[8px]">
+      <div className="py-0 px-[8px]">
         {isLoading && (
           <div
             style={{ borderTopColor: "transparent" }}

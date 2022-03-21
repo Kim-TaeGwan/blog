@@ -8,8 +8,8 @@ interface Props {
 }
 const Item: FC<Props> = memo(({ title, date, url, category }) => {
   const notionUrl = () => {
-    // let openNewWindow = window.open('about:blank');
-    // openNewWindow.location.href = `${url}`;
+    let openNewWindow: any = window.open("about:blank");
+    openNewWindow.location.href = `${url}`;
   };
   return (
     <tr onClick={notionUrl} className="odd:bg-[#fff] hover:underline">

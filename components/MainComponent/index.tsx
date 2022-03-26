@@ -2,9 +2,9 @@ import React, { useState, useCallback } from "react";
 import Overlay from "@/shared/Overlay";
 import Header from "@/layout/Header";
 import PortfolioList from "@/components/MainComponent/PortfolioList";
-import StudyTableComponent from "@/components/StudyTableComponent";
 import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";
+import ContactMe from "@/components/MainComponent/ContactMe";
 
 const MainComponent = () => {
   const [inputs, setInputs] = useState({
@@ -65,6 +65,7 @@ const MainComponent = () => {
       <PortfolioList />
       <StudyTable main />
       <TechnicalSkills />
+      <ContactMe />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import PortfolioList from "@/components/MainComponent/PortfolioList";
 import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";
 import ContactMe from "@/components/MainComponent/ContactMe";
+import Footer from "@/layout/Footer";
 
 const MainComponent = () => {
   const [inputs, setInputs] = useState({
@@ -71,6 +72,7 @@ const MainComponent = () => {
         sendMail={sendMail}
         onChange={handleContact}
       />
+      <Footer />
     </div>
   );
 };

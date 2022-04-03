@@ -35,7 +35,6 @@ const MainComponent = () => {
       body: JSON.stringify(data),
     }).then((res) => res.json());
     // .then(json => {});
-    console.log(name, email, message);
     setCloseBtb(!closeBtn);
     setInputs({
       name: "",
@@ -46,7 +45,7 @@ const MainComponent = () => {
 
   // contactme onChange
   const { name, email, message } = inputs;
-  const onChange = useCallback((e) => {
+  const handleContact = useCallback((e) => {
     const { name, value } = e.target;
     setInputs((inputs) => ({
       ...inputs,
@@ -65,7 +64,13 @@ const MainComponent = () => {
       <PortfolioList />
       <StudyTable main />
       <TechnicalSkills />
-      <ContactMe />
+      <ContactMe
+        name={name}
+        email={email}
+        message={message}
+        sendMail={sendMail}
+        onChange={handleContact}
+      />
     </div>
   );
 };

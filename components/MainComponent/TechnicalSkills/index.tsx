@@ -4,7 +4,7 @@ import SkillsBar from "./SkillsBar";
 
 const TechnicalSkills = () => {
   return (
-    <div className=" py-0 px-[16px] ">
+    <div className=" py-[16px] px-[16px] mb-[50px]">
       <h4 className="part_title my-[10px] mx-0 font-normal">
         Technical Skills
       </h4>

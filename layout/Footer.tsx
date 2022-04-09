@@ -10,8 +10,10 @@ const Footer = () => {
   return (
     <div className="bg-[#616161] text-white pt-[12px]">
       <div className="footer_box py-[32px] px-[16px]">
-        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top left">
-          <span className="title text-[24px] block mb-[25px]">FOOTER</span>
+        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top mobile:w-full mobile:block mobile:mb-[30px] left">
+          <span className="title text-[24px] block mb-[25px] mobile:mb-[10px]">
+            FOOTER
+          </span>
           <div className="content">
             <span className="block text-[15px] mb-[15px]">
               Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
@@ -30,8 +32,10 @@ const Footer = () => {
             </span>
           </div>
         </div>
-        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top center">
-          <span className="title text-[24px] block mb-[25px]">BLOG POSTS</span>
+        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top center mobile:w-full mobile:block mobile:mb-[30px]">
+          <span className="title text-[24px] block mb-[25px] mobile:mb-[10px]">
+            BLOG POSTS
+          </span>
           <div className="content">
             <div className="post_container p-[16px] box-border border-b-[1px] border-solid border-white hover:bg-[#ccc]">
               <div className="post_img w-[50px] h-[50px] inline-block align-middle mr-[15px]">
@@ -69,8 +73,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top right">
-          <span className="title text-[24px] block mb-[25px]">
+        <div className="content_box w-[33.3%] py-0 px-[8px] box-border inline-block align-top right mobile:w-full mobile:block mobile:mb-[30px]">
+          <span className="title text-[24px] block mb-[25px] mobile:mb-[10px]">
             POPULAR TAGS
           </span>
           <div className="content">

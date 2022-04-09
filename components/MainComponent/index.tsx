@@ -14,12 +14,6 @@ const MainComponent = () => {
     message: "",
   });
   const [closeBtn, setCloseBtb] = useState(false);
-  const openNav = () => {
-    // setNavClose(!navClose);
-    // document.getElementById("mySidenav").style.display = "block";
-    // document.getElementById("overLay").style.display = "block";
-    console.log("nav");
-  };
 
   // contactme 이메일 전송
   const sendMail = (e: any) => {
@@ -53,6 +47,8 @@ const MainComponent = () => {
       [name]: value,
     }));
   }, []);
+
+  const openNav = useCallback(() => {}, []);
 
   const closeModal = () => {
     setCloseBtb(!closeBtn);

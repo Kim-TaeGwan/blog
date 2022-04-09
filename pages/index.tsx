@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Home: NextPage = () => {
   axios.defaults.withCredentials = true;
+
   return (
     <Layout>
       <MainComponent />

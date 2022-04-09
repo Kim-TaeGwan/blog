@@ -1,8 +1,15 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Overlay = () => {
+interface Props {
+  isOverlay?: boolean;
+}
+const Overlay: FC<Props> = ({ isOverlay }) => {
   return (
-    <div className="w-full h-full absolute top-0 left-0 bg-black opacity-30 hidden" />
+    <div
+      className={`w-full h-full absolute top-0 left-0 bg-black opacity-30 ${
+        isOverlay ? "block" : "hidden"
+      }`}
+    />
   );
 };
 

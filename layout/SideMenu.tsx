@@ -1,4 +1,4 @@
-import React, { VFC } from "react";
+import React, { FC } from "react";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
 import Image from "next/image";
@@ -18,7 +18,7 @@ interface Props {
   onClick: () => void;
 }
 
-const SideMenu: VFC<Props> = ({ onClick }) => {
+const SideMenu: FC<Props> = ({ onClick }) => {
   const nullPage = () => {
     alert("페이지 공사중입니다");
   };

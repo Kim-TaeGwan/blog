@@ -40,7 +40,7 @@ const MainComponent = () => {
 
   // contactme onChange
   const { name, email, message } = inputs;
-  const handleContact = useCallback((e) => {
+  const handleContact = useCallback((e: any) => {
     const { name, value } = e.target;
     setInputs((inputs) => ({
       ...inputs,

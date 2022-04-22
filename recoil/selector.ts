@@ -4,15 +4,13 @@ import { selector } from "recoil";
 export const isMenuState = selector({
   key: "isMenuState",
   get: ({ get }) => {
-    const menu = get(menuState);
-    return menu;
+    return get(menuState);
   },
 });
 
 export const isOverlayState = selector({
   key: "isOverlayState",
   get: ({ get }) => {
-    const overlay = get(overlayState);
-    return overlay;
+    return get(overlayState);
   },
 });

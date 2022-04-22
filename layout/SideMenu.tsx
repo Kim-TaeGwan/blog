@@ -1,7 +1,9 @@
-import React, { FC } from "react";
+import React, { Dispatch, FC, SetStateAction } from "react";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { isMenuState } from "@/recoil/selector";
 import SnsList from "./Items/SnsList";
 import MenuList from "./Items/MenuList";
 import profile_img from "assets/image/Profile_img.png";
@@ -16,15 +18,21 @@ import FacebookIcon from "assets/icon/FacebookIcon";
 
 interface Props {
   onClick: () => void;
+  isMenu: any;
 }
 
-const SideMenu: FC<Props> = ({ onClick }) => {
+const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
+  // const isSideMenu = useRecoilValue(isMenuState);
+
   const nullPage = () => {
     alert("페이지 공사중입니다");
   };
   return (
     <div
-      className="bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] tablet:hidden mobile:hidden"
+      className={`bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] 
+      tablet:${isMenu ? "block" : "hidden"} mobile:${
+        isMenu ? "block" : "hidden"
+      }`}
       id="mySidenav"
       // style={style}
     >

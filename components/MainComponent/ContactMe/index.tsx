@@ -11,7 +11,7 @@ interface Props {
 }
 const ContactMe: FC<Props> = ({ email, message, sendMail, name, onChange }) => {
   return (
-    <div className="px-[16px] px-[16px] bg-[#9e9e9e]">
+    <div className="px-[16px] px-[16px] bg-[#9e9e9e]" id="contact">
       <div className="py-[16px] px-0">
         <div className="my-[10px] mx-0 font-normal">ContactMe</div>
         <ContactInformation />

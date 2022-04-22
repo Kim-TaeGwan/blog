@@ -1,6 +1,4 @@
 import React, { useState, useCallback } from "react";
-import Overlay from "@/shared/Overlay";
-import Header from "@/layout/Header";
 import PortfolioList from "@/components/MainComponent/PortfolioList";
 import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";
@@ -55,9 +53,10 @@ const MainComponent = () => {
   };
 
   return (
-    <div className="h-screen pt-[16px] pb-[16px] pl-0 pr-0 align-top relative ml-[300px] tablet:ml-0 mobile:ml-0">
-      <Overlay />
-      <Header onClick={openNav} />
+    <>
+      {/*<div className="h-screen pt-[16px] pb-[16px] pl-0 pr-0 align-top relative ml-[300px] tablet:ml-0 mobile:ml-0">*/}
+      {/*<Overlay />*/}
+      {/*<Header onClick={openNav} />*/}
       <PortfolioList />
       <StudyTable main />
       <TechnicalSkills />
@@ -69,7 +68,8 @@ const MainComponent = () => {
         onChange={handleContact}
       />
       <Footer />
-    </div>
+      {/*</div>*/}
+    </>
   );
 };
 

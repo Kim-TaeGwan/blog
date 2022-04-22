@@ -15,9 +15,8 @@ module.exports = {
         tablet: { max: "995px" },
         mobile: { max: "600px" },
       },
-      animation: { "side-left": "animateleft 0.4s" },
       keyframes: {
-        animateleft: {
+        sideMenu: {
           from: {
             left: "-300px",
             opacity: 0,
@@ -28,6 +27,7 @@ module.exports = {
           },
         },
       },
+      animation: { sideMenu: "sideMenu 0.4s" },
     },
   },
   plugins: [],

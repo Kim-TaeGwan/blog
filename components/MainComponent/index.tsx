@@ -1,6 +1,4 @@
 import React, { useState, useCallback } from "react";
-import Overlay from "@/shared/Overlay";
-import Header from "@/layout/Header";
 import PortfolioList from "@/components/MainComponent/PortfolioList";
 import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";

@@ -1,9 +1,7 @@
-import React, { FC } from "react";
+import React, { Dispatch, FC, SetStateAction } from "react";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
 import Image from "next/image";
-import { useRecoilValue } from "recoil";
-import { isMenuState } from "@/recoil/selector";
 import SnsList from "./Items/SnsList";
 import MenuList from "./Items/MenuList";
 import profile_img from "assets/image/Profile_img.png";
@@ -23,15 +21,17 @@ interface Props {
 
 const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
   // const isSideMenu = useRecoilValue(isMenuState);
+
   const nullPage = () => {
     alert("페이지 공사중입니다");
   };
   return (
     <div
-      className={`bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] ${
-        isMenu ? "tablet:block" : "tablet:hidden"
-      } ${isMenu ? "mobile:block" : "mobile:hidden"} animate-sideMenu`}
-      // id="mySidenav"
+      className={`animate-sideMenu bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] 
+     ${isMenu ? "tablet:block" : "tablet:hidden"} ${
+        isMenu ? "mobile:block" : "mobile:hidden"
+      }`}
+      // style={style}
     >
       <div
         className="w-[20px] h-[20px] absolute top-10 right-20 hidden tablet:block mobile:block"
@@ -51,14 +51,15 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
           <MenuList link="/" menu="PORTFOLIO">
             <BoxBlackIcon />
           </MenuList>
-          {/* <MenuList link="/asd" img={user_ico_black} menu="ABOUT" /> */}
           <li onClick={nullPage} className="list-none cursor-pointer">
             <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
               <UserBlackIcon />
             </span>
             <span className="inline-block text-[15px] align-middle">ABOUT</span>
           </li>
-          {/* <MenuList link="/asd" img={mail_ico_black} menu="CONTACT" /> */}
+          <MenuList link="/study" menu="STUDY TABLE">
+            <TableBlackIcon />
+          </MenuList>
           <li onClick={nullPage} className="list-none cursor-pointer">
             <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
               <MailBlackIcon />
@@ -67,9 +68,6 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
               CONTACT
             </span>
           </li>
-          <MenuList link="/study" menu="STUDY TABLE">
-            <TableBlackIcon />
-          </MenuList>
         </ul>
       </div>
       <div className="sns_list">

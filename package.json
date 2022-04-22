@@ -13,12 +13,14 @@
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-scroll": "^1.8.7",
     "recoil": "^0.7.2"
   },
   "devDependencies": {
     "@types/node": "17.0.24",
     "@types/prettier": "^2.6.0",
     "@types/react": "18.0.5",
+    "@types/react-scroll": "^1.8.3",
     "@types/tailwindcss": "^3.0.10",
     "autoprefixer": "^10.4.4",
     "eslint": "8.13.0",

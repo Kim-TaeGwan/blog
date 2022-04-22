@@ -30,7 +30,7 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
     <div
       className={`bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] ${
         isMenu ? "tablet:block" : "tablet:hidden"
-      } ${isMenu ? "mobile:block" : "mobile:hidden"}`}
+      } ${isMenu ? "mobile:block" : "mobile:hidden"} animate-sideMenu`}
       // id="mySidenav"
     >
       <div

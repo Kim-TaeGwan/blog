@@ -27,7 +27,7 @@ module.exports = {
           },
         },
       },
-      animation: { sideMenu: "0.4s" },
+      animation: { sideMenu: "sideMenu 0.4s" },
     },
   },
   plugins: [],

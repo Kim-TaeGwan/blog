@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
 import Image from "next/image";
@@ -10,7 +10,7 @@ import profile_img from "assets/image/Profile_img.png";
 import CloseBlackIcon from "assets/icon/CloseBlackIcon";
 import UserBlackIcon from "assets/icon/UserBlackIcon";
 import MailBlackIcon from "assets/icon/MailBlackIcon";
-import BoxBlackIcon from "../assets/icon/BoxBlackIcon";
+import BoxBlackIcon from "assets/icon/BoxBlackIcon";
 import TableBlackIcon from "assets/icon/TableBlackIcon";
 import InstagramIcon from "assets/icon/InstagramIcon";
 import GithubIcon from "assets/icon/GithubIcon";
@@ -23,18 +23,15 @@ interface Props {
 
 const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
   // const isSideMenu = useRecoilValue(isMenuState);
-
   const nullPage = () => {
     alert("페이지 공사중입니다");
   };
   return (
     <div
-      className={`bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] 
-      tablet:${isMenu ? "block" : "hidden"} mobile:${
-        isMenu ? "block" : "hidden"
-      }`}
-      id="mySidenav"
-      // style={style}
+      className={`bg-white w-[300px] h-screen p-[16px] box-border leading-[36px] fixed z-[300] animate-[side-left_0.4s] transition-[0.5s] ${
+        isMenu ? "tablet:block" : "tablet:hidden"
+      } ${isMenu ? "mobile:block" : "mobile:hidden"}`}
+      // id="mySidenav"
     >
       <div
         className="w-[20px] h-[20px] absolute top-10 right-20 hidden tablet:block mobile:block"

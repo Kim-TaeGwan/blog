@@ -13,6 +13,7 @@ import TableBlackIcon from "assets/icon/TableBlackIcon";
 import InstagramIcon from "assets/icon/InstagramIcon";
 import GithubIcon from "assets/icon/GithubIcon";
 import FacebookIcon from "assets/icon/FacebookIcon";
+import { Link } from "react-scroll";
 
 interface Props {
   onClick: () => void;
@@ -60,13 +61,25 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
           <MenuList link="/study" menu="STUDY TABLE">
             <TableBlackIcon />
           </MenuList>
-          <li onClick={nullPage} className="list-none cursor-pointer">
-            <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
-              <MailBlackIcon />
-            </span>
-            <span className="inline-block text-[15px] align-middle">
-              CONTACT
-            </span>
+          <li
+            // onClick={nullPage}
+            className="list-none cursor-pointer"
+          >
+            <Link
+              to="contact"
+              containerId="containerElement"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={250}
+            >
+              <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
+                <MailBlackIcon />
+              </span>
+              <span className="inline-block text-[15px] align-middle">
+                CONTACT
+              </span>
+            </Link>
           </li>
         </ul>
       </div>

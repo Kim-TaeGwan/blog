@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 interface Props {
   title: string;
@@ -6,7 +6,7 @@ interface Props {
   url: string;
   category: string;
 }
-const Item: React.FC<Props> = ({ title, date, url, category }) => {
+const Item: FC<Props> = ({ title, date, url, category }) => {
   const notionUrl = () => {
     let openNewWindow: any = window.open("about:blank");
     openNewWindow.location.href = `${url}`;

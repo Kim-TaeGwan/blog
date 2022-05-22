@@ -1,7 +1,8 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
+import { Link } from "react-scroll";
+import Image from "next/image";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
-import Image from "next/image";
 import SnsList from "./Items/SnsList";
 import MenuList from "./Items/MenuList";
 import profile_img from "assets/image/Profile_img.png";
@@ -13,7 +14,6 @@ import TableBlackIcon from "assets/icon/TableBlackIcon";
 import InstagramIcon from "assets/icon/InstagramIcon";
 import GithubIcon from "assets/icon/GithubIcon";
 import FacebookIcon from "assets/icon/FacebookIcon";
-import { Link } from "react-scroll";
 
 interface Props {
   onClick: () => void;
@@ -65,14 +65,7 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
             // onClick={nullPage}
             className="list-none cursor-pointer"
           >
-            <Link
-              to="contact"
-              containerId="containerElement"
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              duration={250}
-            >
+            <Link to="test1" hashSpy={true} smooth={true} spy={true}>
               <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
                 <MailBlackIcon />
               </span>

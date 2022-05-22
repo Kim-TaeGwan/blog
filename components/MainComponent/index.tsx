@@ -4,6 +4,8 @@ import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import TechnicalSkills from "@/components/MainComponent/TechnicalSkills";
 import ContactMe from "@/components/MainComponent/ContactMe";
 import Footer from "@/layout/Footer";
+import { nodemailerApi } from "@/shared/Api";
+import axios from "axios";
 
 const MainComponent = () => {
   const [inputs, setInputs] = useState({
@@ -21,19 +23,28 @@ const MainComponent = () => {
       email,
       message,
     };
-    // fetch("http://localhost:4000/api/sendEmail/sendEmail", {
-    fetch("https://blog-back-server.herokuapp.com/api/sendEmail/sendEmail", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    }).then((res) => res.json());
-    // .then(json => {});
+
+    axios.post(`${nodemailerApi}`, data).then((res: any) => res.json());
     setCloseBtb(!closeBtn);
     setInputs({
       name: "",
       email: "",
       message: "",
     });
+
+    // // fetch("http://localhost:4000/api/sendEmail/sendEmail", {
+    // fetch("https://blog-back-server.herokuapp.com/api/sendEmail/sendEmail", {
+    //   method: "post",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(data),
+    // }).then((res) => res.json());
+    // // .then(json => {});
+    // setCloseBtb(!closeBtn);
+    // setInputs({
+    //   name: "",
+    //   email: "",
+    //   message: "",
+    // });
   };
 
   // contactme onChange

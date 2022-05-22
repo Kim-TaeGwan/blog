@@ -1,7 +1,8 @@
-import React, { Dispatch, FC, SetStateAction } from "react";
+import React, { FC } from "react";
+import { Link } from "react-scroll";
+import Image from "next/image";
 
 // import kakao from "src/assets/icon/kakaotalk.svg";
-import Image from "next/image";
 import SnsList from "./Items/SnsList";
 import MenuList from "./Items/MenuList";
 import profile_img from "assets/image/Profile_img.png";
@@ -60,13 +61,18 @@ const SideMenu: FC<Props> = ({ isMenu, onClick }) => {
           <MenuList link="/study" menu="STUDY TABLE">
             <TableBlackIcon />
           </MenuList>
-          <li onClick={nullPage} className="list-none cursor-pointer">
-            <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
-              <MailBlackIcon />
-            </span>
-            <span className="inline-block text-[15px] align-middle">
-              CONTACT
-            </span>
+          <li
+            // onClick={nullPage}
+            className="list-none cursor-pointer"
+          >
+            <Link to="test1" hashSpy={true} smooth={true} spy={true}>
+              <span className="ico ico w-[15px] h-[15px] leading-[15px] mr-[15px] inline-block align-middle">
+                <MailBlackIcon />
+              </span>
+              <span className="inline-block text-[15px] align-middle">
+                CONTACT
+              </span>
+            </Link>
           </li>
         </ul>
       </div>

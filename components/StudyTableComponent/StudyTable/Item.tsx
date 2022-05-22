@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React from "react";
 
 interface Props {
   title: string;
@@ -6,7 +6,7 @@ interface Props {
   url: string;
   category: string;
 }
-const Item: FC<Props> = memo(({ title, date, url, category }) => {
+const Item: React.FC<Props> = ({ title, date, url, category }) => {
   const notionUrl = () => {
     let openNewWindow: any = window.open("about:blank");
     openNewWindow.location.href = `${url}`;
@@ -24,6 +24,6 @@ const Item: FC<Props> = memo(({ title, date, url, category }) => {
       </td>
     </tr>
   );
-});
+};
 
 export default Item;

@@ -4,29 +4,32 @@ import moment from "moment";
 // import PartTitle from 'components/common/PartTitle';
 import { studyApi } from "shared/Api";
 import Item from "@/components/StudyTableComponent/StudyTable/Item";
+import axios from "axios";
 // import Pagination from "components/common/Pagination";
 
 interface Props {
   main?: boolean;
+  results?: any;
 }
-const StudyTable: FC<Props> = ({ main }) => {
-  const [list, setList] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  // const [postsPerPage, setPostsPerPage] = useState(10);
-
-  useEffect(() => {
-    async function fetchStudyList() {
-      setIsLoading(true);
-      try {
-        const result = await studyApi.get("/");
-        setList(result.data);
-      } catch (error) {
-        console.log(error);
-      }
-      setIsLoading(false);
-    }
-    fetchStudyList();
-  }, []);
+const StudyTable: FC<Props> = ({ main, results }) => {
+  // console.log("study : ", results);
+  // const [list, setList] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // // const [postsPerPage, setPostsPerPage] = useState(10);
+  //
+  // useEffect(() => {
+  //   async function fetchStudyList() {
+  //     setIsLoading(true);
+  //     try {
+  //       const result = await studyApi.get("/");
+  //       setList(result.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //     setIsLoading(false);
+  //   }
+  //   fetchStudyList();
+  // }, []);
 
   // pagination
 
@@ -38,22 +41,22 @@ const StudyTable: FC<Props> = ({ main }) => {
           <Link href={"/study"}>전체보기</Link>
         </div>
       )}
-      {isLoading && (
-        <div
-          style={{ borderTopColor: "transparent" }}
-          className="w-16 h-16 border-4 border-black border-solid rounded-full animate-spin "
-        />
-      )}
+      {/*{isLoading && (*/}
+      {/*  <div*/}
+      {/*    style={{ borderTopColor: "transparent" }}*/}
+      {/*    className="w-16 h-16 border-4 border-black border-solid rounded-full animate-spin "*/}
+      {/*  />*/}
+      {/*)}*/}
       <table
         className={`w-full mt-[25px] text-[15px] ${
           main ? "block h-[200px] overflow-hidden" : ""
         }`}
       >
         <tbody>
-          {list &&
-            list.map((item: any, i) => (
+          {results &&
+            results.map((item: any) => (
               <Item
-                key={i}
+                key={item.id}
                 title={item.title}
                 date={moment(item.date).format("YY.MM.DD")}
                 category={item.category}
@@ -68,3 +71,10 @@ const StudyTable: FC<Props> = ({ main }) => {
 };
 
 export default StudyTable;
+
+export async function getServerSideProps() {
+  const results = await axios.get(`${process.env.FRONT_URL}/api/study`);
+  return {
+    props: { results },
+  };
+}

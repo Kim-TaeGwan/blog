@@ -7,7 +7,7 @@ import Footer from "@/layout/Footer";
 import { nodemailerApi } from "@/shared/Api";
 import axios from "axios";
 
-const MainComponent = () => {
+const MainComponent = ({ datas }: any) => {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
@@ -68,8 +68,8 @@ const MainComponent = () => {
       {/*<div className="h-screen pt-[16px] pb-[16px] pl-0 pr-0 align-top relative ml-[300px] tablet:ml-0 mobile:ml-0">*/}
       {/*<Overlay />*/}
       {/*<Header onClick={openNav} />*/}
-      <PortfolioList />
-      <StudyTable main />
+      <PortfolioList list={datas.portfolioList} />
+      <StudyTable main list={datas.studyList} />
       <TechnicalSkills />
       <ContactMe
         name={name}

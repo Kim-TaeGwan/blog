@@ -3,7 +3,7 @@ import StudyTable from "@/components/StudyTableComponent/StudyTable";
 import Overlay from "@/shared/Overlay";
 // import Header from "@/layout/Header";
 
-const StudyTableComponent = () => {
+const StudyTableComponent = ({ list }: any) => {
   return (
     <div
       className="h-screen pt-[16px] pb-[16px] pl-0 pr-0 align-top relative
@@ -11,7 +11,7 @@ const StudyTableComponent = () => {
      tablet:ml-0 mobile:ml-0"
     >
       <Overlay />
-      <StudyTable />
+      <StudyTable list={list} />
     </div>
   );
 };

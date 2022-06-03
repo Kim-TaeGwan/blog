@@ -9,30 +9,9 @@ import axios from "axios";
 
 interface Props {
   main?: boolean;
-  results?: any;
+  list: [];
 }
-const StudyTable: FC<Props> = ({ main, results }) => {
-  // console.log("study : ", results);
-  // const [list, setList] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // // const [postsPerPage, setPostsPerPage] = useState(10);
-  //
-  // useEffect(() => {
-  //   async function fetchStudyList() {
-  //     setIsLoading(true);
-  //     try {
-  //       const result = await studyApi.get("/");
-  //       setList(result.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //     setIsLoading(false);
-  //   }
-  //   fetchStudyList();
-  // }, []);
-
-  // pagination
-
+const StudyTable: FC<Props> = ({ main, list }) => {
   return (
     <div className=" py-0 px-[16px] mb-[40px] relative">
       <h4 className=" my-[10px] mx-0 font-normal">StudyTable</h4>
@@ -53,10 +32,10 @@ const StudyTable: FC<Props> = ({ main, results }) => {
         }`}
       >
         <tbody>
-          {results &&
-            results.map((item: any) => (
+          {list &&
+            list.map((item: any) => (
               <Item
-                key={item.id}
+                key={item._id}
                 title={item.title}
                 date={moment(item.date).format("YY.MM.DD")}
                 category={item.category}
@@ -71,10 +50,3 @@ const StudyTable: FC<Props> = ({ main, results }) => {
 };
 
 export default StudyTable;
-
-export async function getServerSideProps() {
-  const results = await axios.get(`${process.env.FRONT_URL}/api/study`);
-  return {
-    props: { results },
-  };
-}

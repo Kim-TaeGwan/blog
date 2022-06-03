@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import Portfolio from "./Portfolio";
 // import Pagination from 'components/common/Pagination';
 
-// import { portfolioApi } from "shared/Api";
-import axios from "axios";
-import Test from "@/components/MainComponent/PortfolioList/Test";
+interface Props {
+  list: [];
+}
 
-const PortfolioList: FC = ({ data }: any) => {
+const PortfolioList: FC<Props> = ({ list }) => {
   // console.log("portfolio : ", data);
   // const [list, setList] = useState<any>([]);
   // const [isLoading, setIsLoading] = useState(false);
@@ -38,8 +38,8 @@ const PortfolioList: FC = ({ data }: any) => {
         {/*    className="w-16 h-16 border-4 border-black border-solid rounded-full animate-spin "*/}
         {/*  />*/}
         {/*)}*/}
-        {data
-          ? data.map((item: any, index: number) => (
+        {list
+          ? list.map((item: any, index: number) => (
               <a
                 key={index}
                 href={item.url}
@@ -55,25 +55,9 @@ const PortfolioList: FC = ({ data }: any) => {
             ))
           : []}
       </div>
-      <Test />
       {/*<Pagination />*/}
     </>
   );
 };
 
 export default PortfolioList;
-
-export async function getServerSideProps() {
-  try {
-    const res = await axios.get(
-      `${process.env.BACKEND_URL}/api/portfolio/select`
-    );
-    const data = await res.data;
-    console.log("getServerSideProps  : ", getServerSideProps());
-    return { props: { data } };
-  } catch (error) {
-    const res = error;
-    console.log("error : ", error);
-    return { props: res };
-  }
-}

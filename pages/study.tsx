@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import Layout from "@/layout";
 import StudyTableComponent from "@/components/StudyTableComponent";
 
 const Study = ({ studyList }: any) => {
   axios.defaults.withCredentials = true;
-  useEffect(() => {
-    alert("현재 서버 개선 작업중입니다...");
-  });
 
   return (
     <Layout>

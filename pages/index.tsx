@@ -4,14 +4,9 @@ import Layout from "layout";
 import MainComponent from "@/components/MainComponent";
 
 import Head from "next/head";
-import { useEffect } from "react";
 
 const Home: NextPage = ({ data }: any) => {
   axios.defaults.withCredentials = true;
-
-  useEffect(() => {
-    alert("현재 서버 개선 작업중입니다...");
-  });
   return (
     <Layout>
       <Head>

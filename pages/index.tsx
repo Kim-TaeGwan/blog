@@ -22,10 +22,10 @@ const Home: NextPage = ({ data }: any) => {
 
 export async function getServerSideProps() {
   const portfolio = await axios.get(
-    `${process.env.FRONT_URL}/api/blog/portfolio/list`
+    `${process.env.BACKEND_URL}/api/blog/portfolio/list`
   );
   const study = await axios.get(
-    `${process.env.FRONT_URL}/api/blog/studies/list`
+    `${process.env.BACKEND_URL}/api/blog/studies/list`
   );
   const portfolioList = await portfolio.data;
   const studyList = await study.data;

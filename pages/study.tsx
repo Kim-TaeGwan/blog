@@ -15,7 +15,7 @@ const Study = ({ studyList }: any) => {
 
 export async function getServerSideProps() {
   const study = await axios.get(
-    `${process.env.FRONT_URL}/api/blog/studies/list`
+    `${process.env.BACKEND_URL}/api/blog/studies/list`
   );
   const studyList = await study.data;
   return {

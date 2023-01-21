@@ -5,7 +5,6 @@ axios.defaults.headers.common = {
 };
 
 // const BACKEND_URL = "http://127.0.0.1:4000"; // 로컬서버
-// const BACKEND_URL = "https://blog-back-server.herokuapp.com"; // heroku 서버
 const BACKEND_URL = process.env.BACKEND_URL; // heroku 서버
 
 export const mainApi = axios.create({

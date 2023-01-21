@@ -37,7 +37,7 @@ const StudyTable: FC<Props> = ({ main, list }) => {
               <Item
                 key={item._id}
                 title={item.title}
-                date={moment(item.date).format("YY.MM.DD")}
+                date={moment(item.update_at).format("YY.MM.DD")}
                 category={item.category}
                 url={item.url}
               />
